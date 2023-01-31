@@ -1,16 +1,17 @@
 const File = require('../models/Files');
 const Papa = require('papaparse');
 
+// Home action 
 module.exports.home = async function (req, res) {
     let files = await File.find({});
-
-    console.log(files)
 
     res.render('home', {
         files
     });
 }
 
+
+// Creates parsed CSV file into DB
 module.exports.create = function (req, res) {
     File.uploadedFiles(req, res, async function (err) {
         try {
@@ -47,6 +48,7 @@ module.exports.create = function (req, res) {
     })
 }
 
+// View the CSV file
 module.exports.view = async function (req, res) {
     try {
         let file = await File.findById(req.params.id);
@@ -62,6 +64,7 @@ module.exports.view = async function (req, res) {
     }
 }
 
+// Delete the CSV file
 module.exports.delete = async function (req, res) {
     try {
         let file = await File.findByIdAndDelete(req.params.id);

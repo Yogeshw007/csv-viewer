@@ -1,12 +1,15 @@
 <div class="d-flex flex-column pt-5 text-white align-items-center" style="height: 100vh;background-color: #1c7cd4;">
+    <!-- ***************** Upload file container ******************** -->
     <div id="upload-file-container">
         <h1 class="mb-5 text-center">CSV upload</h1>
+        <!-- **************** Form to upload CSV  ******************** -->
         <form action="/create" method="post" enctype="multipart/form-data"
             class="d-inline-flex flex-column align-items-center border my-3">
             <input type="file" name="file" id="file-input" accept=".csv" />
             <input type="submit" value="Upload File" class="d-inline-block mt-5 " />
         </form>
     </div>
+    <!-- ************** Uploaded CSV files container ************** -->
     <div id="uploaded-files-container" class="d-flex flex-column align-items-center">
         <h1>Uploaded files</h1>
         <% for( let i=0; i < files.length; i++ ) { %>

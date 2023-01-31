@@ -3,6 +3,7 @@
         <a href="/" id="home-link" style="color: white;text-decoration: none;">Home</a>
     </button>
 </div>
+<!-- *************** Header *************** -->
 <div id="header-container">
     <h1 id="csv-name" class="text-center">
         <%= name %>.csv
@@ -22,10 +23,8 @@
             <input type="text" name="search" id="search">
         </div>
     </div>
-
-
-
 </div>
+<!-- **************** Table to display CSV ******************* -->
 <div id="table-container" style="height: 75vh; overflow-y: scroll;">
     <table id="sortable">
         <thead class="bg-success bg-gradient">
@@ -37,7 +36,6 @@
 
         </thead>
         <tbody>
-
             <% for( let i=1; i < results.length; i++ ) { %>
                 <% if (i%2==1) { %>
                     <tr class="border border-dark bg-secondary bg-gradient text-white table-row">
@@ -65,6 +63,7 @@
         </tbody>
     </table>
 </div>
+<!-- *************** Pagination ****************** -->
 <div id="show-table-count" class="d-flex flex-row justify-content-center align-items-center m-3">
     <button id="prev-pagination-btn" class="mx-2 btn btn-primary">Prev</button>
     <div>

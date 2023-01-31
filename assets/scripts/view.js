@@ -41,8 +41,6 @@ function filterDataOnSearchKeyword(e) {
 }
 
 function showRowBasedOnPagination(e) {
-
-
     if (e.target.id === 'next-pagination-btn') {
         let updatedStartCount = Number(startCount) + Number(entryCount.value);
 
