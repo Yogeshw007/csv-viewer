@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-end m-3">
+    <button type="button" class="btn btn-dark">
+        <a href="/" id="home-link" style="color: white;text-decoration: none;">Home</a>
+    </button>
+</div>
+<div id="header-container">
+    <h1 id="csv-name" class="text-center">
+        <%= name %>.csv
+    </h1>
+    <div id="filter-container" class="d-flex justify-content-between mx-3 mb-3">
+        <div id="entries-container" class="">
+            <span>Show</span>
+            <select name="entry" id="entry-count">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+            <span>entries</span>
+        </div>
+        <div id="search-container">
+            <input type="text" name="search" id="search">
+        </div>
+    </div>
+
+
+
+</div>
+<div id="table-container" style="height: 75vh; overflow-y: scroll;">
+    <table id="sortable">
+        <thead class="bg-success bg-gradient">
+            <% for( let index=0; index < keys.length; index++ ) { %>
+                <th class="border border-dark text-center table-head">
+                    <%= keys[index] %>
+                </th>
+                <% } %>
+
+        </thead>
+        <tbody>
+
+            <% for( let i=1; i < results.length; i++ ) { %>
+                <% if (i%2==1) { %>
+                    <tr class="border border-dark bg-secondary bg-gradient text-white table-row">
+                        <% for( let j=0; j < results[i].length; j++ ) { %>
+                            <td class="border border-dark p-2">
+                                <%= results[i][j] %>
+                            </td>
+
+                            <% } %>
+
+                    </tr>
+                    <% } else {%>
+                        <tr class="border border-dark table-row">
+                            <% for( let j=0; j < results[i].length; j++ ) { %>
+                                <td class="border border-dark p-2">
+                                    <%= results[i][j] %>
+                                </td>
+
+                                <% } %>
+
+                        </tr>
+                        <% } %>
+                            <% } %>
+
+        </tbody>
+    </table>
+</div>
+<div id="show-table-count" class="d-flex flex-row justify-content-center align-items-center m-3">
+    <button id="prev-pagination-btn" class="mx-2 btn btn-primary">Prev</button>
+    <div>
+        <p id="current-pagination" class="m-0">1</p>
+    </div>
+
+    <button id="next-pagination-btn" class="mx-2 btn btn-primary">Next</button>
+</div>
+<script src="/scripts/view.js"></script>

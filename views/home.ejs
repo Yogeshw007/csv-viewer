@@ -1,0 +1,28 @@
+<div class="d-flex flex-column pt-5 text-white align-items-center" style="height: 100vh;background-color: #1c7cd4;">
+    <div id="upload-file-container">
+        <h1 class="mb-5 text-center">CSV upload</h1>
+        <form action="/create" method="post" enctype="multipart/form-data"
+            class="d-inline-flex flex-column align-items-center border my-3">
+            <input type="file" name="file" id="file-input" accept=".csv" />
+            <input type="submit" value="Upload File" class="d-inline-block mt-5 " />
+        </form>
+    </div>
+    <div id="uploaded-files-container" class="d-flex flex-column align-items-center">
+        <h1>Uploaded files</h1>
+        <% for( let i=0; i < files.length; i++ ) { %>
+            <div class="uploaded-file-" <%=files[i].Name %> >
+                <h4>
+                    <a href="/view/<%=files[i]._id %>" class="text-dark">
+                        <%= files[i].Name %>
+                    </a>
+                    <a href="/delete/<%=files[i]._id %>">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5028/5028066.png" alt="delete-icon"
+                            style="width: 40px;">
+                    </a>
+                </h4>
+
+
+            </div>
+            <% } %>
+    </div>
+</div>
