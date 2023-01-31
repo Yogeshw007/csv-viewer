@@ -24,7 +24,6 @@ function showRowBasedOnCount() {
 showRowBasedOnCount();
 
 function filterDataOnSearchKeyword(e) {
-    console.log(e);
     let searchedKeyword = e.target.value;
     if (searchedKeyword === '') {
         showRowBasedOnCount();
@@ -63,9 +62,6 @@ function showRowBasedOnPagination(e) {
     } else if (e.target.id === 'prev-pagination-btn') {
 
         let updatedStartCount = Number(startCount) - Number(entryCount.value);
-
-        console.log('startCount', startCount)
-        console.log('updatedStartCount', updatedStartCount)
 
         if (updatedStartCount >= 0 && updatedStartCount < tableRow.length) {
             for (let i = startCount; i < tableRow.length; i++) {
