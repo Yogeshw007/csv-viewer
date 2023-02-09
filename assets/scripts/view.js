@@ -20,6 +20,7 @@ function showRowBasedOnCount() {
             tableRow[i].style.display = 'table-row';
         }
     }
+    currentPagination.textContent = 1;
 }
 showRowBasedOnCount();
 
